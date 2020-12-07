@@ -35,4 +35,14 @@ public class Account {
     public String getBranch() {
         return branch;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountNo=" + accountNo +
+                ", accountType='" + accountType + '\'' +
+                ", balance=" + balance +
+                ", branch='" + branch + '\'' +
+                '}';
+    }
 }

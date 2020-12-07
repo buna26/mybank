@@ -1,8 +1,5 @@
 package com.mybank.dto;
 
-import com.mybank.dto.AccountDTO;
-import com.mybank.dto.AddressDTO;
-
 public class CustomerDTO {
     private String name;
     private Integer id;
