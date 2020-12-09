@@ -5,24 +5,27 @@ public class AddressDTO {
     private String state;
     private Integer pinCode;
 
-    public void setCity(){
-        this.city = city;
-    }
-    public String getCity(String city){
-        return city;
-    }
-
-    public void setState(){
-        this.state = state;
-    }
-    public String getState(String state){
+    public String getState() {
         return state;
     }
 
-    public void setPinCode(){
-        this.pinCode = pinCode;
+    public void setState(String state) {
+        this.state = state;
     }
-    public Integer getPinCode(Integer pinCode){
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Integer getPinCode() {
         return pinCode;
+    }
+
+    public void setPinCode(Integer pinCode) {
+        this.pinCode = pinCode;
     }
 }

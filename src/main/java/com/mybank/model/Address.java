@@ -5,26 +5,36 @@ public class Address {
     private String state;
     private Integer pinCode;
 
-    public void setCity(){
-        this.city = city;
-    }
-    public String getCity(String city){
+    public String getCity() {
         return city;
     }
 
-    public void setState(){
-        this.state = state;
-    }
-    public String getState(String state){
-        return state;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public void setPinCode(){
-        this.pinCode = pinCode;
-    }
-    public Integer getPinCode(Integer pinCode){
+    public Integer getPinCode() {
         return pinCode;
     }
 
+    public void setPinCode(Integer pinCode) {
+        this.pinCode = pinCode;
+    }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", pinCode=" + pinCode +
+                '}';
+    }
 }

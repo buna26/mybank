@@ -2,7 +2,7 @@ package com.mybank.model;
 
 public class Account {
     private Integer accountNo;
-    private String accountType;
+    private AccountType accountType;
     private Integer balance;
     private String branch;
 
@@ -13,10 +13,10 @@ public class Account {
         return accountNo;
     }
 
-    public void setAccountType(String accountType){
+    public void setAccountType(AccountType accountType){
         this.accountType = accountType;
     }
-    public String getAccountType(){
+    public AccountType getAccountType(){
         return accountType;
     }
 

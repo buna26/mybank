@@ -1,8 +1,10 @@
 package com.mybank.dto;
 
+import com.mybank.model.AccountType;
+
 public class AccountDTO {
     private Integer accountNo;
-    private String accountType;
+    private AccountType accountType;
     private Integer balance;
     private String branch;
 
@@ -13,10 +15,10 @@ public class AccountDTO {
         return accountNo;
     }
 
-    public void setAccountType(String accountType){
+    public void setAccountType(AccountType accountType){
         this.accountType = accountType;
     }
-    public String getAccountType(){
+    public AccountType getAccountType(){
         return accountType;
     }
 

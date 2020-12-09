@@ -1,5 +1,7 @@
 package com.mybank.model;
 
+import java.util.Objects;
+
 public class Customer {
     private String name;
     private Integer id;
@@ -50,4 +52,28 @@ public class Customer {
         return account;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return id.equals(customer.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", address=" + address +
+                ", account=" + account +
+                '}';
+    }
 }
