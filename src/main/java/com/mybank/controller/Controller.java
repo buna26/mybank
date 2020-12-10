@@ -5,8 +5,6 @@ import com.mybank.exception.BankException;
 import com.mybank.service.Service;
 import com.mybank.service.ServiceImpl;
 
-import java.security.Provider;
-
 public class Controller {
     private final Service service = new ServiceImpl();
 
@@ -16,5 +14,13 @@ public class Controller {
 
     public void setPassword(String email, String password) throws BankException {
         service.setPassword(email,password);
+    }
+
+    public Boolean loginCustomer(String email, String password) throws BankException{
+        return service.loginCustomer(email,password);
+    }
+
+    public Integer getCurrentBalance(String email) throws BankException{
+        return service.getBalance(email);
     }
 }

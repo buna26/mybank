@@ -7,4 +7,8 @@ public interface Service {
     Integer addCustomer(CustomerDTO customer) throws BankException;
 
     void setPassword(String email, String password) throws BankException;
+
+    Boolean loginCustomer(String email, String password) throws BankException;
+
+    Integer getBalance(String email) throws BankException;
 }

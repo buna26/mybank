@@ -24,4 +24,26 @@ public class ServiceImpl implements Service{
             throw new BankException("No such customer exists!");
         }
     }
+
+    @Override
+    public Boolean loginCustomer(String email, String password) throws BankException {
+        String passwordFromRepo = repository.getPassword(email);
+        if(passwordFromRepo == null){
+            throw new BankException("Invalid credentials");
+        }
+        else{
+            return passwordFromRepo.equals(password);
+        }
+    }
+
+    @Override
+    public Integer getBalance(String email) throws BankException {
+        CustomerDTO customer = repository.findByEmail(email);
+        if(customer == null){
+            throw new BankException("No such customer exist");
+        }
+        else{
+            return customer.getAccount().getBalance();
+        }
+    }
 }

@@ -49,8 +49,37 @@ public class Tester {
         }
     }
 
+    public static void loginCustomer(){
+        try{
+            Boolean isSuccess = controller.loginCustomer("riyadasr26@gmail.com","Rhea2020");
+            if(isSuccess){
+                System.out.println("Logged in!");
+            }
+            else{
+                System.out.println("Not logged in!");
+            }
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void getBalance() {
+        try{
+            Integer balance = controller.getCurrentBalance("riyadasr26@gmail.com");
+            System.out.println("The current account balance is: "+balance);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
         addCustomer();
+
         setPassword();
+
+        loginCustomer();
+        getBalance();
     }
 }
