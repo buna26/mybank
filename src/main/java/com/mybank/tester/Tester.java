@@ -4,7 +4,6 @@ import com.mybank.controller.Controller;
 import com.mybank.dto.AccountDTO;
 import com.mybank.dto.AddressDTO;
 import com.mybank.dto.CustomerDTO;
-import com.mybank.exception.BankException;
 import com.mybank.model.AccountType;
 
 public class Tester {
@@ -74,6 +73,16 @@ public class Tester {
         }
     }
 
+    private static void depositBalance() {
+        try{
+            Integer deposit = controller.depositBalance("riyadasr26@gmail.com",100);
+            System.out.println("Rs."+deposit+" has been credited to the account");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
         addCustomer();
 
@@ -81,5 +90,9 @@ public class Tester {
 
         loginCustomer();
         getBalance();
+
+        depositBalance();
+        getBalance();
     }
+
 }

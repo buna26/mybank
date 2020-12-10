@@ -23,4 +23,8 @@ public class Controller {
     public Integer getBalance(String email) throws BankException{
         return service.getBalance(email);
     }
+
+    public Integer depositBalance(String email, Integer deposit) throws BankException{
+        return service.depositBalance(email,deposit);
+    }
 }

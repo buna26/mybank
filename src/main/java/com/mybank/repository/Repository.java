@@ -9,4 +9,6 @@ public interface Repository {
 
     void setPassword(String email, String password);
     String getPassword(String email);
+
+    void depositBalance(CustomerDTO customer, Integer deposit);
 }

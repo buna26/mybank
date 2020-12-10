@@ -11,4 +11,6 @@ public interface Service {
     Boolean loginCustomer(String email, String password) throws BankException;
 
     Integer getBalance(String email) throws BankException;
+
+    Integer depositBalance(String email, Integer deposit) throws BankException;
 }

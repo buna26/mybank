@@ -46,4 +46,14 @@ public class ServiceImpl implements Service{
             return customer.getAccount().getBalance();
         }
     }
+
+    @Override
+    public Integer depositBalance(String email, Integer deposit) throws BankException {
+        CustomerDTO customer = repository.findByEmail(email);
+        if(customer == null) {
+            throw new BankException("No such customer exists!");
+        }
+        repository.depositBalance(customer, deposit);
+        return deposit;
+    }
 }
