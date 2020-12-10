@@ -144,4 +144,35 @@ public class RepositoryImpl implements Repository{
             }
         }
     }
+
+    @Override
+    public void withDrawBalance(CustomerDTO customer, Integer withdraw) {
+        Customer newCustomer =  new Customer();
+        newCustomer.setId(customer.getId());
+        newCustomer.setName(customer.getName());
+        newCustomer.setEmail(customer.getEmail());
+        newCustomer.setAge(customer.getAge());
+
+        Address address = new Address();
+        address.setCity(customer.getAddress().getCity());
+        address.setState(customer.getAddress().getState());
+        address.setPinCode(customer.getAddress().getPinCode());
+
+        newCustomer.setAddress(address);
+
+        Account account = new Account();
+        account.setAccountNo(customer.getAccount().getAccountNo());
+        account.setAccountType(customer.getAccount().getAccountType());
+        account.setBalance(customer.getAccount().getBalance());
+        account.setBranch(customer.getAccount().getBranch());
+
+        newCustomer.setAccount(account);
+
+        for(Customer c : customers){
+            if(c.equals(newCustomer)){
+                Integer balance = c.getAccount().getBalance();
+                c.getAccount().setBalance(balance-withdraw);
+            }
+        }
+    }
 }

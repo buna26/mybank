@@ -83,6 +83,16 @@ public class Tester {
         }
     }
 
+    private static void widthDrawBalance() {
+        try{
+            Integer widthDraw = controller.withDrawBalance("riyadasr26@gmail.com",10);
+            System.out.println("Rs."+widthDraw+" has been withdrawn from the account");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
         addCustomer();
 
@@ -93,6 +103,8 @@ public class Tester {
 
         depositBalance();
         getBalance();
-    }
 
+        widthDrawBalance();
+        getBalance();
+    }
 }

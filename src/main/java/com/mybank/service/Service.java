@@ -13,4 +13,6 @@ public interface Service {
     Integer getBalance(String email) throws BankException;
 
     Integer depositBalance(String email, Integer deposit) throws BankException;
+
+    Integer withDrawBalance(String email, Integer withdraw) throws BankException;
 }

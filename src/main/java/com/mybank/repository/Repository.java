@@ -11,4 +11,6 @@ public interface Repository {
     String getPassword(String email);
 
     void depositBalance(CustomerDTO customer, Integer deposit);
+
+    void withDrawBalance(CustomerDTO customer, Integer withdraw);
 }
