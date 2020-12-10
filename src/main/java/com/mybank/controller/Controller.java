@@ -20,7 +20,7 @@ public class Controller {
         return service.loginCustomer(email,password);
     }
 
-    public Integer getCurrentBalance(String email) throws BankException{
+    public Integer getBalance(String email) throws BankException{
         return service.getBalance(email);
     }
 }

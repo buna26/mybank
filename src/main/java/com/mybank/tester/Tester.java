@@ -66,7 +66,7 @@ public class Tester {
 
     private static void getBalance() {
         try{
-            Integer balance = controller.getCurrentBalance("riyadasr26@gmail.com");
+            Integer balance = controller.getBalance("riyadasr26@gmail.com");
             System.out.println("The current account balance is: "+balance);
         }
         catch (Exception e){
