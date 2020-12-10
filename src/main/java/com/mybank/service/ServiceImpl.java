@@ -2,14 +2,18 @@ package com.mybank.service;
 
 import com.mybank.dto.CustomerDTO;
 import com.mybank.exception.BankException;
-import com.mybank.repository.Repo;
 import com.mybank.repository.Repository;
+import com.mybank.repository.RepositoryImpl;
+import com.mybank.validator.Validator;
 
 public class ServiceImpl implements Service{
-    private final Repo repository = new Repository();
+    private final Repository repository = new RepositoryImpl();
     @Override
     public Integer addCustomer(CustomerDTO customer) throws BankException {
-
-        return null;
+        Validator.validate(customer);
+        if(repository.findById(customer.getId())!= null){
+            throw new BankException("customer already exist");
+        }
+        return repository.addCustomer(customer);
     }
 }

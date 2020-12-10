@@ -7,10 +7,12 @@ import com.mybank.dto.CustomerDTO;
 import com.mybank.model.AccountType;
 
 public class Tester {
+    private static final Controller controller = new Controller();
+
     public static void  addCustomer(){
         try{
             CustomerDTO customer = new CustomerDTO();
-            customer.setName("Riya");
+            customer.setName("Riya Das");
             customer.setId(1);
             customer.setEmail("riyadasr26@gmail.com");
             customer.setAge(20);
@@ -27,6 +29,9 @@ public class Tester {
             account.setBalance(0);
             account.setBranch("Chatterjeehat");
             customer.setAccount(account);
+
+            Integer id = controller.addCustomer(customer);
+            System.out.println("New Customer added with id: "+id);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
