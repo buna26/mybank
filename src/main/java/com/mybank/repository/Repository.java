@@ -6,4 +6,7 @@ public interface Repository {
     Integer addCustomer(CustomerDTO customer);
     CustomerDTO findById(Integer id);
     CustomerDTO findByEmail(String email);
+
+    void setPassword(String email, String password);
+    String getPassword(String email);
 }

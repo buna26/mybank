@@ -5,4 +5,6 @@ import com.mybank.exception.BankException;
 
 public interface Service {
     Integer addCustomer(CustomerDTO customer) throws BankException;
+
+    void setPassword(String email, String password) throws BankException;
 }

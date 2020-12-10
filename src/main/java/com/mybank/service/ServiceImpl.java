@@ -16,4 +16,12 @@ public class ServiceImpl implements Service{
         }
         return repository.addCustomer(customer);
     }
+
+    @Override
+    public void setPassword(String email, String password) throws BankException {
+        repository.setPassword(email,password);
+        if(repository.findByEmail(email) == null){
+            throw new BankException("No such customer exists!");
+        }
+    }
 }

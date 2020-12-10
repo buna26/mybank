@@ -103,4 +103,14 @@ public class RepositoryImpl implements Repository{
         }
         return null;
     }
+
+    @Override
+    public void setPassword(String email, String password) {
+        credentials.put(email,password);
+    }
+
+    @Override
+    public String getPassword(String email) {
+        return credentials.get(email);
+    }
 }
